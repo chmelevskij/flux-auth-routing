@@ -3,9 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import React, { Component } from 'react'
 import Header from './Header'
-import Sidebar from './Sidebar'
+import Contacts from './Contacts'
 import { Grid, Row, Col } from 'react-bootstrap'
 import AuthOLock from 'auth0-lock'
+import { Route } from 'react-router-dom'
+import Index from './Index'
+import ContactDetail from './ContactDetail'
 
 const options = { auth: { redirect: false }, autoclose: true }
 
@@ -17,14 +20,15 @@ class App extends Component {
   render () {
     return (
       <div>
-        <Header lock={this.lock}></Header>
+        <Header lock={this.lock} />
         <Grid>
           <Row>
             <Col xs={12} md={3}>
-              <Sidebar location={this.props.location} />
+              <Contacts />
             </Col>
             <Col xs={12} md={9}>
-              {this.props.children}
+              <Route exact component={Index} />
+              <Route path='/contact/:id' component={ContactDetail} />
             </Col>
           </Row>
         </Grid>

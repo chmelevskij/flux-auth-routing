@@ -3,7 +3,7 @@ import { Nav, Navbar, NavItem } from 'react-bootstrap'
 import AuthActions from '../actions/AuthActions'
 import AuthStore from '../stores/AuthStore'
 
-class HeaderComponent extends Component {
+class Header extends Component {
   constructor () {
     super()
     this.state = {
@@ -52,4 +52,4 @@ class HeaderComponent extends Component {
   }
 }
 
-export default HeaderComponent
+export default Header

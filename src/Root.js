@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
-import Index from './components/Index'
-import ContactDetail from './components/ContactDetail'
 
 import App from './components/App'
 
@@ -12,12 +10,7 @@ class Root extends Component {
   render () {
     return (
       <BrowserRouter >
-        <Route path='/' >
-          <App>
-            <Route component={Index} />
-            <Route path='contact/:id' component={ContactDetail} />
-          </App>
-        </Route>
+        <Route path='/' component={App} />
       </BrowserRouter >
     )
   }

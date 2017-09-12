@@ -27,8 +27,9 @@ class ContactDetailComponent extends Component {
   }
 
   onChange () {
+    let contact = ContactStore.getContact(this.props.match.params.id)
     this.setState({
-      contact: ContactStore.getContact(this.props.match.params.id)
+      contact
     })
   }
   render () {

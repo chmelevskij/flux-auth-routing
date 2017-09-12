@@ -1,22 +1,22 @@
 import React, { Component } from 'react'
-import {ListGroup} from 'react-bootstrap'
-// import { Link } from 'react-router'
+import {ListGroup, ListGroupItem} from 'react-bootstrap'
 import ContactActions from '../actions/ContactActions'
 import ContactStore from '../stores/ContactStore'
-import ContactListItem from './ContactListItem'
+import { Link } from 'react-router-dom'
 
 // We'll use this function to get a contact
 // list item for each of the contacts in our list
 function getContactListItem (contact) {
   return (
-    <ContactListItem
-      key={contact.id}
-      contact={contact}
-      />
+    <ListGroupItem key={contact.id}>
+      <Link to={`/contact/${contact.id}`}>
+        <h4>{contact.name}</h4>
+      </Link>
+    </ListGroupItem>
   )
 }
 
-class ContactsComponent extends Component {
+class Contacts extends Component {
   constructor () {
     super()
     // For our initial state, we just want
@@ -64,4 +64,4 @@ class ContactsComponent extends Component {
   }
 }
 
-export default ContactsComponent
+export default Contacts

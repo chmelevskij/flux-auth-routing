@@ -26,7 +26,7 @@ export default {
       .then(contact => {
         AppDispatcher.dispatch({
           actionType: ContactConstants.RECIEVE_CONTACT,
-          contacts: contact
+          contact: contact
         })
       })
       .catch(message => {

@@ -52,7 +52,7 @@ ContactStore.dispatchToken = AppDispatcher.register(action => {
       break
 
     case ContactConstants.RECIEVE_CONTACT:
-      setContact(action.contact)
+      setContact(action.contact[0])
       ContactStore.emitChange()
       break
 
